@@ -1,3 +1,4 @@
+
 <?php
 // Define database connection variables
 $servername = "localhost";
@@ -40,6 +41,7 @@ if (isset($_GET["id"])) {
     echo "Age: <input type='text' name='age' value='$age'><br>";
     echo "<input type='submit' value='Update'>";
     echo "</form>";
+
   }
 } else {
   echo "No record found.";
@@ -58,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "UPDATE students SET name='$name', lastname='$lastname', major='$major', college='$college', age='$age' WHERE id='$id'";
   if (mysqli_query($conn, $sql)) {
     echo "Form data updated successfully!";
+  
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
@@ -66,3 +69,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Close database connection
 mysqli_close($conn);
 ?>
+
+<style>
+   form {
+     margin: 20px;
+     padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+   }
+   label {
+     display: block;
+     margin-bottom: 10px;
+     font-weight: bold;
+   }
+   input[type=text] {
+     width: 100%;
+     padding: 5px;
+     margin-bottom: 20px;
+     border-radius: 3px;
+     border: 1px solid #ccc;
+   }
+   input[type=submit] {
+     background-color: #4CAF50;
+     color: white;
+     padding: 8px 16px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+   input[type=submit]:hover {
+     background-color: #3e8e41;
+   }
+ </style>
