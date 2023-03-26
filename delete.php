@@ -23,7 +23,7 @@ if (isset($_GET["id"])) {
 
   // Execute SQL statement and check for errors
   if (mysqli_query($conn, $sql)) {
-    echo "Record deleted successfully";
+  echo "<script>alert('Record deleted successfully!');</script>";
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
@@ -32,3 +32,38 @@ if (isset($_GET["id"])) {
 // Close database connection
 mysqli_close($conn);
 ?>
+
+
+<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+		}
+		h1 {
+			color: #333333;
+			text-align: center;
+			margin-top: 50px;
+		}
+		p {
+			color: #555555;
+			text-align: center;
+			font-size: 20px;
+			margin-top: 30px;
+		}
+		a {
+			display: block;
+			margin: 30px auto 0;
+			width: 150px;
+			height: 40px;
+			background-color: #007bff;
+			color: #ffffff;
+			text-align: center;
+			line-height: 40px;
+			text-decoration: none;
+			border-radius: 5px;
+			font-size: 16px;
+		}
+		a:hover {
+			background-color: #0069d9;
+		}
+	</style>
